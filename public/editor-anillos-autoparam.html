@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="UTF-8"><title>Auto Param Test</title></head>
+<body>
+<input id="hours" value="0">
+<input id="minutes" value="0">
+<input id="seconds" value="0">
+<select id="distanceSelect"><option value="maraton">maratón</option></select>
+<input id="color1" value="#FF6B6B">
+<input id="color2" value="#FFA94D">
+<input id="color3" value="#FFD93D">
+<button onclick="convertTimeToPercentages()">Convertir</button>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const h = params.get('horas') || 0;
+  const m = params.get('minutos') || 0;
+  const s = params.get('segundos') || 0;
+  const paleta = params.get('paleta');
+  const distancia = params.get('distancia');
+
+  document.getElementById("hours").value = h;
+  document.getElementById("minutes").value = m;
+  document.getElementById("seconds").value = s;
+  document.getElementById("distanceSelect").value = distancia;
+  document.getElementById("distanceSelect").dispatchEvent(new Event('change'));
+
+  const palettes = {
+    sunset: ['#FF6B6B', '#FFA94D', '#FFD93D'],
+    oceanic: ['#894DFB', '#3F9DFE', '#3FCF77'],
+    contraste: ['#FF1514', '#201C73', '#F12A2A']
+  };
+  const selected = palettes[paleta];
+  if (selected) {
+    document.getElementById("color1").value = selected[0];
+    document.getElementById("color2").value = selected[1];
+    document.getElementById("color3").value = selected[2];
+    document.getElementById("color1").dispatchEvent(new Event('change'));
+  }
+
+  setTimeout(() => {
+    document.querySelector("button[onclick*=convertTimeToPercentages]").click();
+  }, 300);
+});
+</script>
+
+</body>
+</html>
