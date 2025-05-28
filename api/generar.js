@@ -13,7 +13,8 @@ module.exports = async (req, res) => {
 
   const page = await browser.newPage();
   const filePath = path.join(__dirname, '../public/editor.html');
-  await page.goto(`file://${filePath}`, { waitUntil: 'networkidle0' });
+  await page.goto('https://anillo-vercel-pnpm-final.vercel.app/editor.html', { waitUntil: 'networkidle0' });
+
 
   await page.evaluate((h, m, s, d, p) => {
     document.getElementById('hours').value = h;
