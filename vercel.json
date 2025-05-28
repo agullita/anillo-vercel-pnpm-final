@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/generar.js", "use": "@vercel/node" }
+  ],
+  "routes": [
+    { "src": "/api/generar", "dest": "api/generar.js" }
+  ]
+}

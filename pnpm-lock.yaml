@@ -1,0 +1,7 @@
+lockfileVersion: 5.4
+specifiers:
+  chrome-aws-lambda: 10.1.0
+  puppeteer-core: 21.1.0
+dependencies:
+  chrome-aws-lambda: 10.1.0
+  puppeteer-core: 21.1.0

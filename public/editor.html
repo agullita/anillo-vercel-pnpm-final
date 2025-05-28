@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Anillo</title>
+  <style>
+    svg { display: block; margin: auto; }
+    .dot {
+      cx: 150;
+      cy: 150;
+      r: 8;
+      fill: #8A4DFF;
+    }
+  </style>
+</head>
+<body>
+  <input type="number" id="hours" value="0"><input type="number" id="minutes" value="0"><input type="number" id="seconds" value="0">
+  <select id="distanceSelect"><option value="#8A4DFF">Maratón</option></select>
+  <input id="color1" value="#FF6B6B"><input id="color2" value="#FFA94D"><input id="color3" value="#FFD93D">
+  <button onclick="convertTimeToPercentages()">Convertir</button>
+  <svg width="300" height="300">
+    <circle r="130" cx="150" cy="150" stroke="#ccc" stroke-width="30" fill="none" />
+    <circle r="100" cx="150" cy="150" stroke="#ccc" stroke-width="30" fill="none" />
+    <circle r="70" cx="150" cy="150" stroke="#ccc" stroke-width="30" fill="none" />
+    <circle class="dot"></circle>
+  </svg>
+  <script>
+    function convertTimeToPercentages() {}
+  </script>
+</body>
+</html>
